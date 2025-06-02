@@ -1,0 +1,7 @@
+{
+  "web_dev": ["HTML5", "Flask", "Streamlit", "MongoDB", "MySQL", "Netlify"],
+  "programming": ["Python", "Java", "C"],
+  "data_science": ["Pandas", "NumPy", "Matplotlib", "Power BI", "Tableau"],
+  "ai": ["scikit-learn", "PyTorch", "TensorFlow", "NLTK", "spaCy", "OpenCV"],
+  "tools": ["Git", "GitHub", "Figma", "Canva", "Twilio"]
+}
