@@ -1,7 +1,14 @@
+/* Add this at the very top of your CSS file */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     background-color: #d0d4df;
+    /* Prevent horizontal overflow */
+    overflow-x: hidden;
 }
 
 /* side navigation menu */
@@ -106,7 +113,6 @@ h3 {
     padding: 10px;
     background-color: #41486b;
     border-radius: 4px;
-    margin-right: 5%;
 }
 
 .bar1, .bar2, .bar3 {
@@ -137,6 +143,8 @@ body, html {
 .main {
     margin-left: 250px;
     transition: 0.3s;
+    /* Ensure main content doesn't overflow */
+    max-width: calc(100% - 250px);
 }
 
 .main h1 {
@@ -521,6 +529,12 @@ body, html {
     transform: scale(1);
 }
 
+footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .footer-content {
     display: flex;
     justify-content: space-evenly;
@@ -531,6 +545,7 @@ body, html {
     background-color: #f8f9fa;
     padding-left: 260px;
     margin-top: 40px;
+    width: 100%;
 }
 
 .attributions {
@@ -549,50 +564,80 @@ body, html {
 
 /* media query for smaller screens */
 @media screen and (max-width: 768px) {
+    /* Reset body and html for mobile */
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
     .sidebar {
         width: 0;
+        left: -100%;
     }
    
     .navbar-toggle {
         display: block;
+        right: 10px;
+        top: 10px;
     }
    
     .main {
         margin-left: 0;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
     }
    
     .hero-image {
-        height: 50%;
+        height: 60vh;
+        width: 100%;
         flex-direction: column;
         justify-content: center;
+        padding: 0;
+        margin: 0;
     }
     
     .hero-content {
         flex-direction: column;
+        padding: 0 20px;
+        width: 100%;
     }
     
     .hero-text {
         text-align: center;
         order: 2;
-        padding: 10%;
+        padding: 20px 10px;
+        min-width: auto;
+        width: 100%;
     }
     
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin: 10px 0;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
     }
     
     .profile-container {
         order: 1;
-        margin-top: 10%;
-        margin-bottom: 0%;
+        margin: 20px 0 10px 0;
+        min-width: auto;
+        width: 100%;
     }
     
     .profile {
-        max-height: 180px;
+        max-height: 150px;
+        width: 150px;
+        height: 150px;
     }
     
     .sidebar.open {
         width: 100%;
+        left: 0;
     }
 
     .sidebar-nav-item img {
@@ -607,14 +652,25 @@ body, html {
     }
 
     .body-container {
-        flex-direction: column; 
+        flex-direction: column;
+        padding: 0 15px;
+        gap: 20px;
+        width: 100%;
     }
+
     .timeline-section {
         min-width: auto;
+        width: 100%;
+        margin: 0 0 20px 0;
+        padding: 20px;
     }
+
     .about-section, .skills-section {
-        max-width: 100%; 
+        max-width: 100%;
+        width: 100%;
+        min-width: auto;
     }
+
     .skills-section ul {
         max-width: 100%;
         padding: 0 10px;
@@ -626,9 +682,38 @@ body, html {
     }
 
     .projects-container {
-        padding: 0 10px;
+        padding: 0 15px;
+        width: 100%;
     }
+
     .project-card {
         width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Fix footer for mobile */
+    .footer-content {
+        flex-direction: column;
+        padding: 20px 15px;
+        padding-left: 15px;
+        width: 100%;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .attributions {
+        text-align: center;
+    }
+
+    /* Ensure all sections are properly contained */
+    .main h1 {
+        padding: 0 15px;
+        font-size: 1.8rem;
+    }
+
+    /* Fix any remaining overflow issues */
+    * {
+        max-width: 100%;
     }
 }
