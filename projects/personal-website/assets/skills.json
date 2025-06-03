@@ -1,7 +1,8 @@
 {
-  "web_dev": ["HTML5", "Flask", "Streamlit", "MongoDB", "MySQL", "Netlify"],
-  "programming": ["Python", "Java", "C"],
-  "data_science": ["Pandas", "NumPy", "Matplotlib", "Power BI", "Tableau"],
-  "ai": ["scikit-learn", "PyTorch", "TensorFlow", "NLTK", "spaCy", "OpenCV"],
-  "tools": ["Git", "GitHub", "Figma", "Canva", "Twilio"]
+  "languages": ["Python", "SQL", "C", "Java"],
+  "ML_/_data_science": ["Pandas", "NumPy", "XGBoost", "Random Forest", "PyTorch", "TensorFlow", "OpenCV"],
+  "NLP": ["spaCy", "NLTK", "Text Extraction (Regex)"],
+  "web_development_&_deployment": ["HTML5", "CSS", "Flask", "Streamlit", "Netlify", "MongoDB", "MySQL"],
+  "visualisation": ["Matplotlib", "PowerBI", "Tableau"],
+  "tools": ["Git", "GitHub", "Jupyter", "Figma", "Canva", "Twilio"]
 }

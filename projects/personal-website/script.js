@@ -56,15 +56,23 @@ function displaySkills(skills) {
   const staticHeading = container.querySelector('h1');
   container.innerHTML = staticHeading ? staticHeading.outerHTML : '';
   
-  container.innerHTML += `<h3>Web Development and Deployment</h3><ul>${skills.web_dev.map(skill => `<li>${skill}</li>`).join('')}</ul>`;
+  container.innerHTML += `<div class="skills-grid"></div>`;
+  const grid = container.querySelector('.skills-grid');
   
-  container.innerHTML += `<h3>Programming Languages</h3><ul>${skills.programming.map(skill => `<li>${skill}</li>`).join('')}</ul>`;
-  
-  container.innerHTML += `<h3>Data Science</h3><ul>${skills.data_science.map(skill => `<li>${skill}</li>`).join('')}</ul>`;
-  
-  container.innerHTML += `<h3>Artificial Intelligence</h3><ul>${skills.ai.map(skill => `<li>${skill}</li>`).join('')}</ul>`;
-
-  container.innerHTML += `<h3>Tools</h3><ul>${skills.tools.map(skill => `<li>${skill}</li>`).join('')}</ul>`;
+  for (const [category, items] of Object.entries(skills)) {
+    const formattedCategory = category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const card = document.createElement('div');
+    card.className = 'skill-card';
+    
+    card.innerHTML = `
+      <h3>${formattedCategory}</h3>
+      <div class="skill-items">
+        ${items.map(skill => `<span class="skill-item">${skill}</span>`).join('')}
+      </div>
+    `;
+    
+    grid.appendChild(card);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', loadSkills);
