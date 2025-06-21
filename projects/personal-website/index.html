@@ -23,15 +23,15 @@
     <body>
         <div id="sidebar" class="sidebar">
             <img src="assets/monogram.png" class="sidebar-monogram">
-            <a class="sidebar-nav-item active" href="index.html">
+            <a class="sidebar-nav-item active" href="#home" onclick="setActiveNav(this)">
                 <i class="fa-solid fa-house"></i>
                 Home
             </a>
-            <a class="sidebar-nav-item" href="about.html">
+            <a class="sidebar-nav-item" href="#about" onclick="setActiveNav(this)">
                 <i class="fa-solid fa-circle-user"></i>
                 About
             </a>
-            <a class="sidebar-nav-item" href="projects.html">
+            <a class="sidebar-nav-item" href="#projects" onclick="setActiveNav(this)">
                 <i class="fa-solid fa-code"></i>
                 Projects
             </a>
@@ -56,32 +56,33 @@
             <div class="bar3"></div>
         </div>
 
-        <div class = "main">
-            <div class="hero-image">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Tamanna Ahmad</h1>
-                        <p>Artificial Intelligence and Data Science</p>
-                    </div>
-                    <div class="profile-container">
-                        <img src="assets/profile-photo.jpg" alt="Profile Photo" class="profile">
+        <div class="main">
+            <!-- Home Section -->
+            <section id="home">
+                <div class="hero-image">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>Tamanna Ahmad</h1>
+                            <p>Artificial Intelligence and Data Science</p>
+                        </div>
+                        <div class="profile-container">
+                            <img src="assets/profile-photo.jpg" alt="Profile Photo" class="profile">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <section id = "about">
                 <div class="body-container">
                     <div class="about-section">
                         <h1>ABOUT ME</h1>
                         <p>
                             Hello! I am Tamanna Ahmad, an Artificial Intelligence and Data Science student based in Bengaluru, India. My focus is on using Machine Learning and Data Science to develop tools that help ease daily tasks. 
                             <br>
-                            I am always looking out for opportunities to learn more and build new applications. I   would love to work together and explore new frontiers in Data Science and AI! 
+                            I am always looking out for opportunities to learn more and build new applications. I would love to work together and explore new frontiers in Data Science and AI! 
                             <br>
                             Currently, I am working as an AI Developer Intern at ZEEX AI.
                             <br>
                             To know more about my education and experiences:
                         </p>
-                        <a href = "about.html"><button class = "button">Learn More</button></a>
+                        <a href="#about"><button class="button">Learn More</button></a>
                     </div>
                     <div class="languages-section">
                         <h1>Languages</h1>
@@ -93,22 +94,168 @@
                     </div>
                 </div>
             </section>
+
+            <!-- About Section -->
+            <section id="about">
+                <h1 style="font-size: xx-large;">About Me</h1>
+                <div class="body-container">
+                    <div class="timeline-section">
+                        <h2>Experience</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">June 2025 - Present</div>
+                                <div class="timeline-content">
+                                    <h3>AI Developer Intern</h3>
+                                    <p class="institution">ZEEX AI, Nirmaan, CFI, IIT Madras</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-section">
+                        <h2>Education</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2022 - Present</div>
+                                <div class="timeline-content">
+                                    <h3>Bachelor of Engineering</h3>
+                                    <p class="institution">K. S. School of Engineering and Management</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-section">
+                    <h1>SKILLS</h1>
+                    <div id="skills-grid" class="skills-grid"></div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <h1>My Projects</h1>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <h2>Research Paper Optimizer</h2>
+                        <img src="./assets/research-paper-optimizer-app.png">
+                        <p class="project-description">
+                            A Streamlit web app that helps researchers improve their papers with AI tools for abstract generation, citation validation, and relevance checks.
+                            <br>
+                            <b>First Runner-Up, TechSaksham Regional Showcase (Edunet/Microsoft) | 2024</b>
+                        </p>
+                        <div class="project-features">
+                            <h3>Features:</h3>
+                            <ul>
+                                <li>Abstract Generator</li>
+                                <li>Image Captioning</li>
+                                <li>Citation Validator</li>
+                                <li>Plagiarism & Coherence Checks</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <h3>Tech Stack:</h3>
+                            <div class="tech-icons">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon" title="Python">
+                                <img src="https://streamlit.io/images/brand/streamlit-mark-color.svg" alt="Streamlit" class="tech-icon" title="Streamlit">
+                                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" class="tech-icon" title="Hugging Face">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="tech-icon" title="Pandas">
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://research-paper-optimizer.streamlit.app/" class="button" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="https://docs.google.com/document/d/1WzcIH99WBy7MG6QX0TXR-QTIU_daOcR7/edit" class="button" target="_blank">
+                                <i class="fas fa-file-alt"></i> Report
+                            </a>
+                            <a href="https://github.com/TamannaAhmad/research-paper-optimizer" class="button" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h2>PCOD Risk Detection and Cycle Prediction</h2>
+                        <img src="./assets/flowwell-landing-page.png">
+                        <p class="project-description">
+                            A Flask-based web app that predicts PCOD risk and provides personalized diet/exercise plans based on menstrual cycle phases.
+                        </p>
+                        <div class="project-features">
+                            <h3>Features:</h3>
+                            <ul>
+                                <li>PCOD Risk Prediction</li>
+                                <li>Cycle Phase Calculator</li>
+                                <li>Integrated Chatbot for Recommendations</li>
+                                <li>Client-side Data Processing for Privacy</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <h3>Tech Stack:</h3>
+                            <div class="tech-icons">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon" title="Python">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" class="tech-icon" title="Flask">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="tech-icon" title="HTML5">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="tech-icon" title="CSS3">
+                                <img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" alt="Scikit-learn" class="tech-icon" title="Scikit-learn">
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/TamannaAhmad/MenstrualCycleDietExercise" class="button" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h2>Job Seeker Success Predictor</h2>
+                        <img src="./assets/job-prediction-app.png">
+                        <p class="project-description">
+                            A machine learning model (Random Forest) to predict hiring success based on candidate profiles, deployed via Streamlit.
+                        </p>
+                        <div class="project-features">
+                            <h3>Features:</h3>
+                            <ul>
+                                <li>ROC AUC Score: 0.93</li>
+                                <li>Top Features: Personality Score, Skill Score</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <h3>Tech Stack:</h3>
+                            <div class="tech-icons">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon" title="Python">
+                                <img src="https://streamlit.io/images/brand/streamlit-mark-color.svg" alt="Streamlit" class="tech-icon" title="Streamlit">
+                                <img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" alt="Scikit-learn" class="tech-icon" title="Scikit-learn">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="tech-icon" title="Pandas">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="tech-icon" title="NumPy">
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://job-seeker-success-prediction.streamlit.app/" class="button" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="https://github.com/TamannaAhmad/Job-Seeker-Sucess-Prediction" class="button" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
+
         <footer>
             <div class="footer-content">
                 <p>© 2025 Tamanna Ahmad. All rights reserved.
                 <br>Last Updated: June, 2025
                 <br>
-                <a href = "#">Back to Top</a>
+                <a href="#home">Back to Top</a>
                 </p>
                 <div class="attributions">
                     <div class="attributions">
                         <p>Attributions:
                         <br> <a target="_blank" href="https://icons8.com/icon/40670/c-programming">C Programming</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
                         <br>Hero image by <a href="https://unsplash.com/@kowalikus?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Krzysztof Kowalik</a> on <a href="https://unsplash.com/photos/black-mountain-under-white-sky-during-daytime-2pnozU26QBo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
-                </div>
+                    </div>
                 </div>
             </div>
         </footer>
     </body>
-</html>
+</html> 
