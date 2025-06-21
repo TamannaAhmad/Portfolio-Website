@@ -74,7 +74,7 @@ function displaySkills(skillsData) {
         
         // Create category title
         const categoryTitle = document.createElement('h3');
-        categoryTitle.textContent = category;
+        categoryTitle.textContent = category.replace(/_/g, ' ').replace(/\//g, ' / ').toUpperCase();
         skillCard.appendChild(categoryTitle);
         
         // Create skills list
@@ -116,14 +116,78 @@ document.addEventListener('DOMContentLoaded', function() {
     loadSkills();
 });
 
+let currentProjectIndex = 0;
+
+function showProject(index) {
+    const gallery = document.querySelector('.projects-gallery');
+    const projectsContainer = document.querySelector('.projects-container');
+    const projects = document.querySelectorAll('.project-card');
+
+    if (!projects.length) return;
+
+    // Loop aroud the projects
+    if (index >= projects.length) {
+        currentProjectIndex = 0;
+    } else if (index < 0) {
+        currentProjectIndex = projects.length - 1;
+    } else {
+        currentProjectIndex = index;
+    }
+
+    const activeCard = projects[currentProjectIndex];
+    const cardWidth = activeCard.offsetWidth;
+    const galleryWidth = gallery.offsetWidth;
+
+    // Calculate the offset required to center the active card
+    const offset = activeCard.offsetLeft + (cardWidth / 2) - (galleryWidth / 2);
+
+    projectsContainer.style.transform = `translateX(-${offset}px)`;
+
+    // Update active class
+    projects.forEach(card => card.classList.remove('active-project'));
+    activeCard.classList.add('active-project');
+}
+
+function changeProject(direction) {
+    showProject(currentProjectIndex + direction);
+}
+
+function setupSwipe() {
+    const projectsContainer = document.querySelector('.projects-container');
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    projectsContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    projectsContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) { // Swiped left
+            changeProject(1);
+        }
+
+        if (touchEndX > touchStartX + 50) { // Swiped right
+            changeProject(-1);
+        }
+    }
+}
+
 // Set initial state based on screen size
 window.addEventListener('load', function() {
     adjustLayout();
+    showProject(currentProjectIndex);
+    setupSwipe();
 });
 
 // Handle window resize
 window.addEventListener('resize', function() {
     adjustLayout();
+    showProject(currentProjectIndex); // Recalculate on resize
 });
 
 // Adjust layout based on screen width
