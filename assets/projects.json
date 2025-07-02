@@ -1,0 +1,91 @@
+[
+  {
+    "title": "Research Paper Optimizer",
+    "image": "assets/research-paper-optimizer-app.png",
+    "description": "Developed an AI-powered research paper optimization tool that processes academic papers to improve quality and compliance with publishing standards. The system analyzes 200+ PDF documents using NLP techniques, achieving a 22% improvement in text coherence scores (ROUGE-1). Won First Runner-Up at TechSaksham Regional Showcase (Edunet/Microsoft).",
+    "features": [
+      "Automated abstract generation using fine-tuned BERT models",
+      "Image captioning for scientific figures",
+      "Citation validation against 10+ academic formats",
+      "Plagiarism detection and coherence scoring system",
+      "Interactive Streamlit dashboard as a simple user interface"
+    ],
+    "tech_stack": [
+      {"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", "alt": "Python", "title": "Python"},
+      {"src": "https://streamlit.io/images/brand/streamlit-mark-color.svg", "alt": "Streamlit", "title": "Streamlit"},
+      {"src": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg", "alt": "Hugging Face", "title": "Hugging Face"},
+      {"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg", "alt": "Pandas", "title": "Pandas"},
+      {"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg", "alt": "NumPy", "title": "NumPy"}
+    ],
+    "links": [
+      {"href": "https://research-paper-optimizer.streamlit.app/", "class": "button", "icon": "fas fa-external-link-alt", "text": "Live Demo"},
+      {"href": "https://docs.google.com/document/d/1WzcIH99WBy7MG6QX0TXR-QTIU_daOcR7/edit", "class": "button", "icon": "fas fa-file-alt", "text": "Case Study"},
+      {"href": "https://github.com/TamannaAhmad/research-paper-optimizer", "class": "button", "icon": "fab fa-github", "text": "Source Code"},
+      {"href": "https://drive.google.com/file/d/10ADBUAfJQ9MH-tGHNOiHiqYKVlnluI0o/view", "class": "button", "icon": "fas fa-video", "text": "Demo Video"}
+    ]
+  },
+  {
+    "title": "FlowWell: PCOD Risk Assessment",
+    "image": "assets/flowwell-landing-page.png",
+    "description": "Built an end-to-end healthcare web application that assesses PCOD risk with 89% accuracy using XGBoost and predicts menstrual cycles. The system processes sensitive health data securely with client-side processing and provides personalized diet/exercise recommendations through an integrated chatbot.",
+    "features": [
+      "XGBoost model for PCOD risk prediction",
+      "Cycle phase calculator using a Python script",
+      "Privacy-focused design (no server-side data storage)",
+      "Interactive chatbot for personalized recommendations",
+      "Responsive UI with patient education resources"
+    ],
+    "tech_stack": [
+      {"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", "alt": "Python", "title": "Python"},
+      {"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg", "alt": "Flask", "title": "Flask"},
+      {"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", "alt": "HTML5", "title": "HTML5"},
+      {"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", "alt": "CSS3", "title": "CSS3"},
+      {"src": "https://xgboost.ai/images/logo/xgboost-logo.png", "alt": "XGBoost", "title": "XGBoost"}
+    ],
+    "links": [
+      {"href": "https://github.com/TamannaAhmad/MenstrualCycleDietExercise", "class": "button", "icon": "fab fa-github", "text": "Source Code"}
+    ]
+  },
+  {
+    "title": "Job Seeker Success Prediction",
+    "image": "assets/job-prediction-app.png",
+    "description": "Developed a predictive analytics system that forecasts hiring outcomes with 93% AUC using Random Forest. Analyzed 1,500+ candidate profiles to identify key success factors (Personality Score, Experience) and built an interactive dashboard for HR decision-making.",
+    "features": [
+      "Feature importance analysis revealing top predictors",
+      "Interactive Streamlit dashboard to test new candidates",
+      "Automated data preprocessing pipeline",
+      "Bias detection analysis for fairness auditing"
+    ],
+    "tech_stack": [
+      {"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", "alt": "Python", "title": "Python"},
+      {"src": "https://streamlit.io/images/brand/streamlit-mark-color.svg", "alt": "Streamlit", "title": "Streamlit"},
+      {"src": "https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png", "alt": "Scikit-learn", "title": "Scikit-learn"},
+      {"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg", "alt": "Pandas", "title": "Pandas"},
+      {"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg", "alt": "NumPy", "title": "NumPy"},
+      {"src": "https://matplotlib.org/3.3.3/_images/sphx_glr_logos2_003.png", "alt": "Matplotlib", "title": "Matplotlib"}
+    ],
+    "links": [
+      {"href": "https://job-seeker-success-prediction.streamlit.app/", "class": "button", "icon": "fas fa-external-link-alt", "text": "Live Demo"},
+      {"href": "https://github.com/TamannaAhmad/Job-Seeker-Sucess-Prediction", "class": "button", "icon": "fab fa-github", "text": "Source Code"},
+      {"href": "https://github.com/TamannaAhmad/Job-Seeker-Success-Prediction/blob/main/roc_curve.png", "class": "button", "icon": "fas fa-chart-line", "text": "Performance Metrics"}
+    ]
+  },
+  {
+    "title": "Recruitment Analytics Dashboard",
+    "image": "assets/dashboard.png",
+    "description": "Created a comprehensive Power BI dashboard for HR analytics that transforms raw recruitment data into actionable insights. Implemented advanced DAX measures to support data-driven hiring decisions.",
+    "features": [
+      "Dynamic filtering by demographics and qualifications",
+      "Bias detection metrics for gender/age fairness",
+      "Candidate scoring threshold analysis",
+      "Interactive visualizations of score distributions",
+      "KPI tracking with custom DAX measures"
+    ],
+    "tech_stack": [
+      {"src": "assets/powerbi.jpg", "alt": "Power BI", "title": "Power BI"}
+    ],
+    "links": [
+      {"href": "https://github.com/TamannaAhmad/Job-Seeker-Success-Prediction/blob/main/Recruitment%20Data%20Analysis.pbix", "class": "button", "icon": "fab fa-github", "text": "Source Code"}
+    ]
+  }
+]

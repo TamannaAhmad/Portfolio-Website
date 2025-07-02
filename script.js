@@ -93,6 +93,109 @@ function displaySkills(skillsData) {
     });
 }
 
+// Load projects from JSON file
+async function loadProjects() {
+    try {
+        const response = await fetch('assets/projects.json');
+        if (response.ok) {
+            const projectsData = await response.json();
+            displayProjects(projectsData);
+        } else {
+            throw new Error('JSON file not found');
+        }
+    } catch (error) {
+        console.error('Could not load projects:', error.message);
+    }
+}
+
+// Display projects in the gallery
+function displayProjects(projectsData) {
+    const projectsContainer = document.querySelector('.projects-container');
+    if (!projectsContainer) return;
+    projectsContainer.innerHTML = '';
+    projectsData.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+
+        // Title
+        const title = document.createElement('h2');
+        title.textContent = project.title;
+        card.appendChild(title);
+
+        // Image
+        const img = document.createElement('img');
+        img.src = project.image;
+        card.appendChild(img);
+
+        // Description
+        const desc = document.createElement('p');
+        desc.className = 'project-description';
+        desc.innerHTML = project.description.replace(/\n/g, '<br>');
+        card.appendChild(desc);
+
+        // Features
+        if (project.features && project.features.length) {
+            const featuresDiv = document.createElement('div');
+            featuresDiv.className = 'project-features';
+            const featuresTitle = document.createElement('h3');
+            featuresTitle.textContent = 'Features:';
+            featuresDiv.appendChild(featuresTitle);
+            const ul = document.createElement('ul');
+            project.features.forEach(f => {
+                const li = document.createElement('li');
+                li.textContent = f;
+                ul.appendChild(li);
+            });
+            featuresDiv.appendChild(ul);
+            card.appendChild(featuresDiv);
+        }
+
+        // Tech Stack
+        if (project.tech_stack && project.tech_stack.length) {
+            const techDiv = document.createElement('div');
+            techDiv.className = 'tech-stack';
+            const techTitle = document.createElement('h3');
+            techTitle.textContent = 'Tech Stack:';
+            techDiv.appendChild(techTitle);
+            const iconsDiv = document.createElement('div');
+            iconsDiv.className = 'tech-icons';
+            project.tech_stack.forEach(icon => {
+                const img = document.createElement('img');
+                img.src = icon.src;
+                img.alt = icon.alt;
+                img.className = 'tech-icon';
+                img.title = icon.title;
+                iconsDiv.appendChild(img);
+            });
+            techDiv.appendChild(iconsDiv);
+            card.appendChild(techDiv);
+        }
+
+        // Links
+        if (project.links && project.links.length) {
+            const linksDiv = document.createElement('div');
+            linksDiv.className = 'project-links';
+            project.links.forEach(link => {
+                const a = document.createElement('a');
+                a.href = link.href;
+                a.className = link.class;
+                a.target = '_blank';
+                if (link.icon) {
+                    const i = document.createElement('i');
+                    i.className = link.icon;
+                    a.appendChild(i);
+                    a.appendChild(document.createTextNode(' '));
+                }
+                a.appendChild(document.createTextNode(link.text));
+                linksDiv.appendChild(a);
+            });
+            card.appendChild(linksDiv);
+        }
+
+        projectsContainer.appendChild(card);
+    });
+}
+
 // Smooth scrolling for anchor links
 document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('a[href^="#"]');
@@ -114,6 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Load skills when the page loads
     loadSkills();
+    loadProjects();
 });
 
 let currentProjectIndex = 0;
